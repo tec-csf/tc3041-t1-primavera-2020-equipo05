@@ -3,8 +3,8 @@
 ---
 
 ##### Integrantes:
-1. *[Poner aquí Nombre y Apellidos del integrante 1]* - *[Poner aquí su Matrícula]* - *[Poner aquí su campus]*
-2. *[Eduardo Harari]* - *[A01025876]* - *[Santa Fe]*
+1. *Gabriel Schlam Huber* - *A01024122* - *Santa Fe*
+2. *Eduardo Harari* - *A01025876* - *Santa Fe*
 3. *[Poner aquí Nombre y Apellidos del integrante 3]* - *[Poner aquí su Matrícula]* - *[Poner aquí su campus]*
 4. *[Poner aquí Nombre y Apellidos del integrante 4]* - *[Poner aquí su Matrícula]* - *[Poner aquí su campus]*
 
