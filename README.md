@@ -1,3 +1,4 @@
+
 # Tarea 1. SQL Avanzado
 
 ---
@@ -52,8 +53,51 @@ A continuación aparecen descritos los diferentes elementos que forman parte de 
 
 ### 2.1 Modelo de la *base de datos* 
 
-*[Incluya aquí el Diagrama Entidad-Relación Extendido y explique las jerarquías modeladas así como las restricciones existentes*
 ![Diagrama ERE](database/DiagramaERE.png)
+
+Nuestra implementación para nuestra base de datos incluye las entidades siguientes, con sus respectivas relaciones y/o restricciones:
+1. **Colegio:**
+	* Relación con:
+		* Mesa
+		* Votación
+	* Jerarquías:
+		* Mesa: 1 a muchos, es decir, un colegio tiene 1 o más mesas.
+		* Votación: 1 a muchos, es decir, un colegio tiene 1 o más votaciones.
+2. **Mesa:**
+	* Relación con:
+		* Colegio (previamente mencionada).
+		* Votante
+		* Partido:
+			* Aquí existen 2 relaciones:
+				* Elecciones municipales.
+				* Elecciones federales.
+	* Jerarquías:
+		* Votante: 1 a muchos, es decir, una mesa tiene 1 o más votantes.
+		* Partido: muchos a muchos, ya que una mesa tiene muchos votos por diferentes partidos, y un partido tiene muchos votos en diferentes mesas.
+3. **Partido:**
+	* Relación con:
+		* Mesa (previamente mencionada).
+		* Votante.
+		* Apoderado.
+	* Jerarquías:
+		* Votante: 
+			* 0 a 4.
+			* Aquí existe una restricción, ya que cada partido tiene una lista nominal a la que pertenecen únicamente 4 votantes.
+		* Apoderado: 1 a muchos, es decir, un partido tiene 1 o más apoderados.
+4. **Votante:**
+	* Relación con:
+		* Partido (previamente mencionada).
+		* Mesa (previamente mencionada).
+	* Restricciones:
+		* Un votante puede ser: Mexicano o Extranjero.
+		* Si es Mexicano, tiene las siguientes opciones:
+			* Ser un votante común.
+			* Ser un miembro:
+				* Vocal
+				* Presidente
+			* Ser un suplente de los puestos anteriores.
+
+***Las demás entidades ya fueron mencionadas y explicadas***
 
 ### 2.2 Arquitectura de la solución
 
