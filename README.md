@@ -53,6 +53,7 @@ A continuación aparecen descritos los diferentes elementos que forman parte de 
 ### 2.1 Modelo de la *base de datos* 
 
 *[Incluya aquí el Diagrama Entidad-Relación Extendido y explique las jerarquías modeladas así como las restricciones existentes*
+![Diagrama ERE](database/DiagramaERE.png)
 
 ### 2.2 Arquitectura de la solución
 
