@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  	<link rel="stylesheet" href="styles.css">
+	<script src="script.js"></script>
+  	<title>Tarea 1 </title>
+</head>
+
+<body>
+	<div>
+		<ul class="nav nav-tabs">
+			<li class="nav-item">
+				<a class="nav-link active" href="home.html">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="viewtables.html">View Tables</a>
+			</li>
+		</ul>
+	</div>
+	<br>
+  	<br>
+
+	<div id="ViewTables">
+		<div class="TablaVotacion">
+			<h2> Votacion </h2>
+		<table class="table table-striped table-dark">
+			<tbody>
+				 	<tr>
+					  	<td style="background-color: lightyellow; color: black"> ID </td>
+						<td style="background-color: lightyellow; color: black"> FECHA</td>
+					</tr>
+					<tr>
+					  	<td> 1 </td>
+						<td> 1 </td>
+					</tr>
+			</tbody>
+		</table>
+		</div>
+
+		<div class="TablaColegio">
+			<table class="table table-striped table-dark">
+				<h2> Colegio </h2>
+				<tbody>
+				 	<tr>
+					  	<td style="background-color: lightyellow; color: black"> NUMERO </td>
+						<td style="background-color: lightyellow; color: black"> NUMERO ELECTORES</td>
+						<td style="background-color: lightyellow; color: black"> FECHA VOTACION</td>
+						<td style="background-color: lightyellow; color: black"> ID VOTACION</td> 
+					</tr>
+					<tr>
+					  	<td> 1 </td>
+						<td> 1 </td>
+						<td> 1 </td>
+						<td> 1 </td>
+					</tr>
+			</tbody>
+		</div>
+
+		<div class="TablaMesa">
+			<table class="table table-striped table-dark">
+				<h2> Mesa </h2>
+				<tbody>
+				 	<tr>
+					  	<td style="background-color: lightyellow; color: black"> ID </td>
+						<td style="background-color: lightyellow; color: black"> VOTOS EN BLANCO</td>
+						<td style="background-color: lightyellow; color: black"> VOTOS EN NULO</td>
+						<td style="background-color: lightyellow; color: black"> NUMERO COLEGIO</td> 
+					</tr>
+					<tr>
+					  	<td> 1 </td>
+						<td> 1 </td>
+						<td> 1 </td>
+						<td> 1 </td>
+					</tr>
+			</tbody>
+		</div>
+
+		<div class="TablaPartido">
+		  <table class="table table-striped table-dark">
+			<h2> Partido </h2>
+			<tbody>
+				 	<tr>
+					  	<td style="background-color: lightyellow; color: black"> SILGAS </td>
+						<td style="background-color: lightyellow; color: black"> NOMBRE</td>
+						<td style="background-color: lightyellow; color: black"> ID_PRESIDENTE</td>
+					</tr>
+					<tr>
+					  	<td> 1 </td>
+						<td> 1 </td>
+						<td> 1 </td>
+					</tr>
+			</tbody>
+		</div>
+
+	  	<div class="TablaApoderado">
+			<table class="table table-striped table-dark">
+			  <h2> Apoderado </h2>
+			  <tbody>
+				 	<tr>
+					  	<td style="background-color: lightyellow; color: black"> INE </td>
+						<td style="background-color: lightyellow; color: black"> NOMBRE</td>
+						<td style="background-color: lightyellow; color: black"> PARTIDO</td>
+					</tr>
+					<tr>
+					  	<td> 1 </td>
+						<td> 1 </td>
+						<td> 1 </td>
+					</tr>
+			</tbody>
+	  	</div>
+
+	  <div class="TablaVotante">
+	  	<table class="table table-striped table-dark">
+	  		<h2> Votante </h2>
+			<tbody>
+			<tr>
+				<td>
+					<form action="/action_page.php">
+						Fecha desde
+						<label for="date"></label>
+						<input type="date" id="date" name="date">
+						Fecha hasta
+						<label for="date"></label>
+						<input type="date" id="date" name="date">
+						<button type="button" class="btn btn-secondary">SELECT</button>
+					</form>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+		<table class="table table-striped table-dark">
+				<tbody>
+				 	<tr>
+						<td style="background-color: lightyellow; color: black"> NOMBRE</td>
+						<td style="background-color: lightyellow; color: black"> FECHA NACIMIENTO</td>
+						<td style="background-color: lightyellow; color: black"> DIRECCION</td> 
+						<td style="background-color: lightyellow; color: black"> NUMERO COLEGIO</td>
+						<td style="background-color: lightyellow; color: black"> FECHA INICIO</td>
+						<td style="background-color: lightyellow; color: black"> FECHA FIN</td> 
+					</tr>
+					<tr>
+						<td> 1 </td>
+						<td> 1 </td>
+						<td> 1 </td>
+						<td> 1 </td>
+						<td> 1 </td>
+						<td> 1 </td>
+					</tr>
+			</tbody>
+	  </div>
+
+	  <div class="TablaListaMun">
+		<table class="table table-striped table-dark">
+		  	<h2>Lista Municipal</h2>
+		  	<tbody>
+				 <tr>
+				  	<td style="background-color: lightyellow; color: black"> ID VOTANTE </td>
+					<td style="background-color: lightyellow; color: black"> ORDEN</td>
+					<td style="background-color: lightyellow; color: black"> PARTIDO</td>
+				</tr>
+				<tr>
+				  	<td> 1 </td>
+					<td> 1 </td>
+					<td> 1 </td>
+				</tr>
+			</tbody>
+	  </div>
+
+	  <div class="TablaElecMun">
+		<table class="table table-striped table-dark">
+		  <h2> Eleccion Municipal </h2>
+		  <tbody>
+				 <tr>
+				  	<td style="background-color: lightyellow; color: black"> ID MESA </td>
+					<td style="background-color: lightyellow; color: black"> NUMERO COLEGIO</td>
+					<td style="background-color: lightyellow; color: black"> PARTIDO</td>
+				</tr>
+				<tr>
+				  	<td> 1 </td>
+					<td> 1 </td>
+					<td> 1 </td>
+				</tr>
+		</tbody>
+	 </div>
+
+	 <div class="TablaHistElecMun">
+		<table class="table table-striped table-dark">
+		  <h2> Eleccion Municipal Historica </h2>
+		  <tbody>
+				 <tr>
+				  	<td style="background-color: lightyellow; color: black"> ID MESA </td>
+					<td style="background-color: lightyellow; color: black"> NUMERO COLEGIO</td>
+					<td style="background-color: lightyellow; color: black"> PARTIDO</td>
+				</tr>
+				<tr>
+				  	<td> 1 </td>
+					<td> 1 </td>
+					<td> 1 </td>
+				</tr>
+		</tbody>
+	 </div>
+
+	<div class="TablaElecFed">
+		<table class="table table-striped table-dark">
+		  <h2> Eleccion Federal </h2>
+		  <tbody>
+				 <tr>
+				  	<td style="background-color: lightyellow; color: black"> ID MESA </td>
+					<td style="background-color: lightyellow; color: black"> NUMERO COLEGIO</td>
+					<td style="background-color: lightyellow; color: black"> PARTIDO</td>
+				</tr>
+				<tr>
+				  	<td> 1 </td>
+					<td> 1 </td>
+					<td> 1 </td>
+				</tr>
+		</tbody>
+	 </div>
+
+	 <div class="TablaHistElecFed">
+		<table class="table table-striped table-dark">
+		  <h2> Eleccion Federal Historica </h2>
+		  <tbody>
+				 <tr>
+				  	<td style="background-color: lightyellow; color: black"> ID MESA </td>
+					<td style="background-color: lightyellow; color: black"> NUMERO COLEGIO</td>
+					<td style="background-color: lightyellow; color: black"> PARTIDO</td>
+				</tr>
+				<tr>
+				  	<td> 1 </td>
+					<td> 1 </td>
+					<td> 1 </td>
+				</tr>
+		</tbody>
+	 </div>
+
+	</body>
+</html>
