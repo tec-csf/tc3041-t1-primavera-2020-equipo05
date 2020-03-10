@@ -180,7 +180,8 @@ Node
 	* Dentro de la segunda pagina "View Tables" como lo dice su nombre es para visualizar completas las tablas, es decir, a la hora de elegir una tabla, internamente se corre el query *"SELECT (ciertos atributos) FROM NOMBRE_TABLA"* y se visualiza en pantalla donde el usuario podrá ver los cambios correspondientes que hizo con operaciones CRUD o simplemente ver la tabla completa sin insertar ninguna fila.
 
 >**NOTA**
-Se logró conectar la Base de Datos de DB2 con Node, pero al intentar implementar la conexión de Node con html, no se logró que se puedan desplegar la información de la misma hacia la página.
+Primero, se intentó conectar la Base de Datos con PHP, sin lograr una conexión exitosa.
+Después, se logró conectar la Base de Datos de DB2 con Node, pero al intentar implementar la conexión de Node con html, no se logró que se puedan desplegar la información de la misma hacia la página.
 Después se intentó con .EJS, pero lamentablemente se obtuvo el mismo resultado.
 
 
