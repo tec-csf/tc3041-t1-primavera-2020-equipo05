@@ -1,4 +1,5 @@
 
+
 # Tarea 1. SQL Avanzado
 
 ---
@@ -105,35 +106,82 @@ Nuestra implementación para nuestra base de datos incluye las entidades siguien
 
 ### 2.3 Frontend
 
-Para el Frontend se utilizo el lenguaje de HTML, JAVASCRIPT y CSS. Se utilizo bootstrap para apoyarnos en el diseño y complementar la pagina web. 
-Bootstrap es una herramienta muy poderosa que tiene su propio diseño al insertar pedazos de codigo basados en HTML. Con Bootstrap se crearon los botones , asi como el estilo de las letras, los TextBox etc. 
-https://getbootstrap.com/docs/4.4/getting-started/introduction/ En este link podemos encontrar la documentacion de Bootstrap asi como los paso para poder trabajar con el de la mejor manera.
+Para el Frontend se utilizo el lenguaje de HTML, JAVASCRIPT y CSS. Se utilizo Bootstrap para apoyarnos en el diseño y complementar la pagina web. 
+Bootstrap es una herramienta muy poderosa que tiene su propio diseño al insertar pedazos de código basados en HTML. Con Bootstrap se crearon los botones, así como el estilo de las letras, los TextBox etc. 
+https://getbootstrap.com/docs/4.4/getting-started/introduction/ En este link podemos encontrar la documentación de Bootstrap así como los paso para poder trabajar con el de la mejor manera.
 
-por otro lado se uso HTML, uno de los lenguages mas usados para la implementaciion de paginas web.
-Mas adelante se encuentra un link sonde podemos ver algunos detalles sobre este lenguage y lo que es caaz de hacer.
-https://www.w3schools.com/html/ En esta pagina podemos encontrar gran variedad de tutoriales asi como ejemplos sobre una  gran parte de los lenguages que usamos como HTML, CSS y JavaScript.
+por otro lado se uso HTML, uno de los lenguajes más usados para la implementación de paginas web.
+Más adelante se encuentra un link sonde podemos ver algunos detalles sobre este lenguaje y lo que es capaz de hacer.
+https://www.w3schools.com/html/ En esta pagina podemos encontrar gran variedad de tutoriales así como ejemplos sobre una  gran parte de los lenguajes que usamos como HTML, CSS y JavaScript.
 
 
-#### 2.3.1 HTML, CSS, JAVASCRIPT
-#### 2.3.2 Bootstrap
-#### 2.3.3 No se usaron librerias
+#### 2.3.1 Lenguaje de programación
+HTML, CSS, JAVASCRIPT
+
+#### 2.3.2 Framework
+Bootstrap
+
+#### 2.3.3 Librerías de funciones o dependencias
+Node
 
 ### 2.4 Backend
 
-*[Incluya aquí una explicación de la solución utilizada para el backend de la tarea. No olvide incluir las ligas o referencias donde se puede encontrar información de los lenguajes de programación, frameworks y librerías utilizadas.]*
+En este caso, no se usa Backend como tal, todo se implementa en el frontend.
+Lo único que podría ser considerado Backend es la utilización de una Base de Datos en el sistema DB2, implementado en un contenedor en Docker.
 
 #### 2.4.1 Lenguaje de programación
+SQL en DB2.
+
 #### 2.4.2 Framework
+Docekr
+
 #### 2.4.3 Librerías de funciones o dependencias
+Node
 
 ## 2.5 Pasos a seguir para utilizar la aplicación
 
-Dentro de la pagina web se tienen dos columnas principales la cuales estan nombradas como "Home" y "View Tables". En la pestaña principal "Home" aparecen unos cuadros dentro de los cuales podemos ingresar datos correspondientes para cada tabla. Por ejemplo, la primera tabla que se tiene es la de Tabla Votacion la cual tiene 2 TextBox. 1)ID, 2)Fecha.
-Dentro de estos 2 recuadros se tiene que ingresar el ID correspondiente de la votacion y la fecha de la misma. Ya teniendo estos 2 datos arriba del recuadro tenemos 3 botones los cuales estan nombrados con los nombres.
-INSERT, UPDATE, DELETE. Como dice el nombre, despues de ingresar los datos se elige la opcion que deseemos y se la de click al boton y tus datos en ese momento son insertados a la tabla, actualizados o borrados.
-El mismo paso se utilizara para cualquier tabla donde el usuario quiera hacer operaciones CRUD.
+1. **Instalación y configuración de Docker:**
+		1.  *Instalar Docker:*
+			[Docker para Mac](https://docs.docker.com/docker-for-mac/install/)
+			[Docker para Windows](https://docs.docker.com/docker-for-windows/install/)
+			[Docker para Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+		2. *Descargar la imagen del contenedor de IBM DB2*
+		<code>docker pull ibmcom/db2</code>
+2. **Instalación de Node:**
+		[Install node](https://nodejs.org/)
+3. **Creación de Base de Datos en Docker, DB2:**
+		1.  *Ejecutar un contenedor con IBM DB, creando una Base de Datos con nombre **"elec"***
+		<code>docker run -itd --name elect --privileged=true -p 50000:50000 -e LICENSE=accept -e DB2INST1_PASSWORD=elecc -e DBNAME=**elec** ibmcom/db2 bash</code>
+		2. *Conectarse al contenedor*
+		<code>docker exec -ti mydb2 bash -c "su - db2inst1"</code>
+		3. Ingrese el comando: <code>db2</code>
+		4. Copie y pegue el contenido del script *[database_elec.sql](scripts/database_elec.sql)* para crear la Base de Datos y sus respectivas tablas.
+		5. Copie y pegue el contenido del script *[inserts_elec.sql](scripts/inserts_elec.sql)* para insertar los datos en la Base de Datos.
+		6. Copie y pegue el contenido del script *[updates_elec.sql](scripts/updates_elec.sql)* para actualizar ciertos los datos en la Base de Datos.
+		7. Copie y pegue el contenido del script *[deletes_elec.sql](scripts/deletes_elec.sql)* para eliminar ciertos los datos en la Base de Datos.
+4. **Instalación de Node en DB2:**
+		1. *Instalar el paquete de ibm_db*
+			<code>npm install ibm_db</code>
+		2. *Ingresar a Docker*
+		3. *Ejecute el siguiente comando:*
+			<code>su - db2inst1</code>
+		4. *Después los siguientes comandos:*
+		<code>db2 connect to elec
+					db2 "bind @db2cli.lst blocking all sqlerror continue grant public CLIPKG 30" </code>
+		5. Ahora entre al contenedor con el comando: <code>db2</code>
+5. **Explicación de la página web:**
+	* Dentro de la pagina web se tienen dos columnas principales la cuales están nombradas como "Home" y "View Tables". 
+	* En la pestaña principal "Home" aparecen unos cuadros dentro de los cuales se podrán ingresar datos correspondientes para cada tabla. 
+	* Por ejemplo, la primera tabla que se tiene es la de Tabla Votación la cual tiene 2 TextBox: *ID* y *Fecha*.
+	* Dentro de estos 2 recuadros se tiene que ingresar el ID correspondiente de la votación y la fecha de la misma. 
+	* Ya teniendo estos 2 datos arriba del recuadro tenemos 3 botones los cuales están nombrados con los nombres. *INSERT*, *UPDATE*, *DELETE*. 
+	* Como dice el nombre, después de ingresar los datos se elige la opción que deseemos y se la de click al botón y tus datos en ese momento serán insertados a la tabla, actualizados o borrados.
+	* El mismo paso se utilizara para cualquier tabla donde el usuario quiera hacer operaciones CRUD.
+	* Dentro de la segunda pagina "View Tables" como lo dice su nombre es para visualizar completas las tablas, es decir, a la hora de elegir una tabla, internamente se corre el query *"SELECT (ciertos atributos) FROM NOMBRE_TABLA"* y se visualiza en pantalla donde el usuario podrá ver los cambios correspondientes que hizo con operaciones CRUD o simplemente ver la tabla completa sin insertar ninguna fila.
 
-Dentro de la segunda pagina "View Tables" como lo dice su nombre es para vizualizar completas las tablas, es decir, a la hora de elegir una tabla, internamente se corre el query "SELECT * FROM NOMBRE_TABLA" y se vizualiza en pantalla donde el usuario podra ver los cambios correspodietes que hizo con operaciones CRUD o simplemnte ver la tabla completa sin insertar ninguna fila.
+>**NOTA**
+Se logró conectar la Base de Datos de DB2 con Node, pero al intentar implementar la conexión de Node con html, no se logró que se puedan desplegar la información de la misma hacia la página.
+Después se intentó con .EJS, pero lamentablemente se obtuvo el mismo resultado.
 
 
 ## 3. Referencias
@@ -145,8 +193,3 @@ https://www.ibm.com/support/pages/sql0805n-package-nullidsysln303-was-not-found
 https://www.npmjs.com/package/ibm_db
 https://stackoverflow.com/questions/4720343/loading-basic-html-in-node-js
 https://developer.ibm.com/mainframe/2019/08/07/accessing-ibm-db2-on-node-js/
-
-
-
-
-
