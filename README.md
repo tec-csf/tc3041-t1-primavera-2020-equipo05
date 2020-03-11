@@ -102,7 +102,7 @@ Nuestra implementación para nuestra base de datos incluye las entidades siguien
 
 ### 2.2 Arquitectura de la solución
 
-*[Incluya aquí un diagrama donde se aprecie la arquitectura de la solución propuesta, así como la interacción entre los diferentes componentes de la misma.]*
+![Diagrama UML](database/DiagramaUML.jpg)
 
 ### 2.3 Frontend
 
