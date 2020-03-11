@@ -133,7 +133,7 @@ Lo único que podría ser considerado Backend es la utilización de una Base de 
 SQL en DB2.
 
 #### 2.4.2 Framework
-Docekr
+Docker
 
 #### 2.4.3 Librerías de funciones o dependencias
 Node
